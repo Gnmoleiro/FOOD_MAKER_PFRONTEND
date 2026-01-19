@@ -1,0 +1,376 @@
+:root {
+  /*|==============FONT FAMILY=============|*/
+  
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /*|======================================|*/
+
+  /*|==============FONT SIZE===============|*/
+    --fs-xs: 0.75rem;   /* 12px */
+    --fs-sm: 0.875rem;  /* 14px */
+    --fs-md: 1rem;      /* 16px (Base) */
+    --fs-lg: 1.125rem;  /* 18px */
+    --fs-xl: 1.25rem;   /* 20px */
+    --fs-2xl: 1.5rem;   /* 24px */
+    --fs-3xl: 2rem;     /* 32px */
+  /*|======================================|*/
+
+  /*|==============FONT WEIGHT=============|*/
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+  /*|======================================|*/
+
+  /*|======MARGINS PADDINGS AND GAP'S======|*/
+    --space-2xs: 0.25rem; /* 4px */
+    --space-xs: 0.5rem;   /* 8px */
+    --space-sm: 0.75rem;  /* 12px */
+    --space-md: 1rem;     /* 16px */
+    --space-lg: 1.5rem;   /* 24px */
+    --space-xl: 2rem;     /* 32px */
+    --space-2xl: 3rem;    /* 48px */
+    --space-3xl: 4rem;    /* 64px */
+  /*|======================================|*/
+
+  /*|==============BORDER RADIUS===========|*/
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 9999px; /* Para botões redondos/pílula */
+  /*|======================================|*/
+
+  /*|==============TRANSITIONS=============|*/
+    --transition-fast: 0.2s;    /* Para hovers rápidos (botões, inputs) */
+    --transition-normal: 0.3s;  /* Para mudanças de tema e cards */
+    --ease-default: ease-out;   /* Movimento suave */
+  /*|======================================|*/
+
+  /*|=========SHADOWS MANIPULATING=========|*/
+    /* Sombra subtil para elementos pequenos (botões, inputs) */
+    --shadow-sm: 0 1px 2px 0 var(--shadow-color);
+    
+    /* Sombra padrão para cartões e dropdowns */
+    --shadow-md: 0 4px 6px -1px var(--shadow-color), 
+                 0 2px 4px -1px var(--shadow-color);
+    
+    /* Sombra larga para modais ou elementos em hover */
+    --shadow-lg: 0 10px 15px -3px var(--shadow-color), 
+                 0 4px 6px -2px var(--shadow-color);
+    
+    /* Sombra muito profunda para elementos flutuantes importantes */
+    --shadow-xl: 0 20px 25px -5px var(--shadow-color), 
+                 0 10px 10px -5px var(--shadow-color);
+
+    /* Sombra interna (útil para inputs ou áreas de "buraco") */
+    --shadow-inner: inset 0 2px 4px 0 var(--shadow-color);
+  /*|======================================|*/
+
+  /*|==============COLOR SCHEME============|*/
+
+    /*|==============(WHITE THEME)===========|*/
+      /* Fundos */
+      --bg-body: #fffaf0;       /* Branco Quente */
+      --bg-card: #fff7ed;       /* Bege Areia (para receitas) */
+      --bg-input: #ffffff;      /* Branco puro para inputs */
+      --bg-header: rgba(255, 250, 240, 0.8); /* Transparente para navbar */
+      
+      /* Cores da Marca */
+      --brand-primary: #ea580c; /* Terracota / Laranja Queimado */
+      --brand-hover: #c2410c;   /* Versão mais escura para hover */
+      --brand-text: #ffffff;    /* Texto dentro dos botões da marca */
+      
+      /* Acentos & Status */
+      --accent-color: #dc2626;  /* Vermelho Tomate (Avisos/Destaques) */
+      --success-color: #15803d; /* Verde (Ingredientes que tens) */
+      --success-bg: #dcfce7;    /* Fundo verde claro para badges */
+      
+      /* Textos */
+      --text-main: #431407;     /* Castanho Café */
+      --text-muted: #7c2d12;    /* Castanho mais claro para subtítulos */
+      --text-inverse: #ffffff;  /* Texto sobre fundos escuros */
+
+      /* Bordas e UI */
+      --border-color: #ffedd5;  /* Laranja muito claro */
+      --shadow-color: rgba(67, 20, 7, 0.1); /* Sombra acastanhada */
+    
+  /*|======================================|*/
+}
+
+  /*|==============(DARK THEME)============|*/
+  [data-theme="dark"] {
+    /* Fundos */
+    --bg-body: #09090b;       /* Preto Profundo */
+    --bg-card: #18181b;       /* Preto Suave (Cinza Carvão) */
+    --bg-input: #27272a;      /* Cinza Escuro para inputs */
+    --bg-header: rgba(9, 9, 11, 0.8);
+    
+    /* Cores da Marca */
+    --brand-primary: #eab308; /* Dourado Mostarda (Premium) */
+    --brand-hover: #ca8a04;   /* Dourado mais escuro */
+    --brand-text: #09090b;    /* Texto preto no botão dourado (contraste) */
+    
+    /* Acentos & Status */
+    --accent-color: #ef4444;  /* Vermelho Vivo */
+    --success-color: #4ade80; /* Verde Brilhante */
+    --success-bg: #14532d;    /* Fundo verde escuro */
+    
+    /* Textos */
+    --text-main: #f4f4f5;     /* Branco Suave */
+    --text-muted: #a1a1aa;    /* Cinza Claro */
+    --text-inverse: #000000;  
+    
+    /* Bordas e UI */
+    --border-color: #3f3f46;  /* Cinza Aço */
+    --shadow-color: rgba(0, 0, 0, 0.5); /* Sombra preta forte */
+  }
+
+  /*|======================================|*/
+
+/*|==============RESET & BASE============|*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  
+  /* Transições globais de tema */
+  transition: background-color var(--transition-normal) var(--ease-default), 
+              color var(--transition-normal) var(--ease-default);
+}
+
+h1, h2, h3, h4 {
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  margin-bottom: var(--space-xs);
+  color: var(--text-main);
+}
+
+h1 { font-size: var(--fs-3xl); }
+h2 { font-size: var(--fs-2xl); }
+h3 { font-size: var(--fs-xl); }
+
+a {
+  text-decoration: none;
+  color: var(--brand-primary);
+  transition: color var(--transition-fast) var(--ease-default);
+}
+
+ul {
+  list-style: none;
+}
+
+/*|==============LAYOUT & GRID===========|*/
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Grelha para os cartões de receitas */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+/*|==============COMPONENTS==============|*/
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) 0;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-header);
+  backdrop-filter: blur(10px); /* Efeito vidro */
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--space-xl);
+  
+  /* Transição na borda e fundo ao mudar tema */
+  transition: background-color var(--transition-normal) var(--ease-default),
+              border-color var(--transition-normal) var(--ease-default);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+/* --- Cartões (Receitas) --- */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  
+  /* Usa a variável de sombra média definida na root */
+  box-shadow: var(--shadow-md);
+  
+  display: flex;
+  flex-direction: column;
+  
+  /* Transições consistentes para todos os estados */
+  transition: transform var(--transition-fast) var(--ease-default),
+              box-shadow var(--transition-fast) var(--ease-default),
+              background-color var(--transition-normal) var(--ease-default),
+              border-color var(--transition-normal) var(--ease-default);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  /* Sombra aumenta para Large no hover */
+  box-shadow: var(--shadow-lg);
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  background-color: var(--border-color); /* Placeholder */
+}
+
+/* --- Botões --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  border: none;
+  font-size: var(--fs-sm);
+  
+  /* Transição rápida para interação */
+  transition: all var(--transition-fast) var(--ease-default);
+}
+
+.btn-primary {
+  background-color: var(--brand-primary);
+  color: var(--brand-text);
+  /* Pequena sombra no botão principal */
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--brand-primary);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background-color: var(--brand-primary);
+  color: var(--brand-text);
+}
+
+.btn-icon {
+  padding: var(--space-xs);
+  border-radius: var(--radius-full);
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  transition: background-color var(--transition-fast) var(--ease-default);
+}
+
+.btn-icon:hover {
+  background-color: var(--border-color);
+}
+
+/* --- Inputs --- */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.input-field {
+  width: 100%;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-input);
+  color: var(--text-main);
+  font-size: var(--fs-md);
+  
+  transition: border-color var(--transition-fast) var(--ease-default),
+              background-color var(--transition-normal) var(--ease-default),
+              box-shadow var(--transition-fast) var(--ease-default);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  /* Sombra suave + outline da cor da marca */
+  box-shadow: var(--shadow-sm), 0 0 0 1px var(--brand-primary);
+}
+
+/* --- Badges (Tags de Ingredientes) --- */
+.badge {
+  display: inline-block;
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  background-color: var(--border-color);
+  color: var(--text-muted);
+}
+
+.badge.success {
+  background-color: var(--success-bg);
+  color: var(--success-color);
+}
+
+/*|==============MOBILE RESPONSIVE=======|*/
+
+@media (max-width: 768px) {
+  /* Ajustar tamanhos de fonte */
+  :root {
+    --fs-3xl: 1.75rem;
+    --fs-2xl: 1.5rem;
+  }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  /* Grelha vira coluna única no telemóvel */
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Navbar simplificada */
+  .navbar {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+/*|======================================|*/
