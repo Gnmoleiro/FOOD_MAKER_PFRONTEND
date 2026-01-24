@@ -1,0 +1,12 @@
+.btn-icon {
+  padding: var(--space-xs);
+  border-radius: var(--radius-full);
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  transition: background-color var(--transition-fast) var(--ease-default);
+}
+
+.btn-icon:hover {
+  background-color: var(--border-color);
+}

@@ -1,0 +1,11 @@
+.btn-primary {
+  background-color: var(--brand-primary);
+  color: var(--brand-text);
+  /* Pequena sombra no botão principal */
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-hover);
+  box-shadow: var(--shadow-md);
+}

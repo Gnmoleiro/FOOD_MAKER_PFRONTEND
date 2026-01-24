@@ -6,12 +6,11 @@
   position: sticky;
   top: 0;
   background-color: var(--bg-header);
-  backdrop-filter: blur(10px); /* Efeito vidro */
+  backdrop-filter: blur(10px);
   z-index: 100;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: var(--space-xl);
   
-  /* Transição na borda e fundo ao mudar tema */
   transition: background-color var(--transition-normal) var(--ease-default),
               border-color var(--transition-normal) var(--ease-default);
 }

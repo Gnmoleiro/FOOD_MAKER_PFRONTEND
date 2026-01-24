@@ -1,0 +1,10 @@
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--brand-primary);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background-color: var(--brand-primary);
+  color: var(--brand-text);
+}

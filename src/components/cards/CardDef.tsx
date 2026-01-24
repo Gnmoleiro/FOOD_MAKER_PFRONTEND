@@ -1,8 +1,13 @@
 import React from 'react'
+import './CardDef.css'
 
 const CardDef = () => {
   return (
-    <div>CardDef</div>
+    <div>
+      <div className="card">
+        <div className="card-img"></div>
+      </div>
+    </div>
   )
 }
 
